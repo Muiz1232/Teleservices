@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teleservices Documentation</title>
+<!-- Include Prism.js CSS -->
+<!-- Include Prism.js CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css">
+<link rel="stylesheet" href="styles_documentation.css">
+</head>
+<body>
+<header>
+  <div class="container">
+    <h1>Teleservices Documentation</h1>
+  </div>
+</header>
+<nav>
+  <div class="container">
+    <ul>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#usage">API Reference</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </div>
+</nav>
+<main>
+  <div class="container">
+    <section id="introduction">
+      <h2>Introduction</h2>
+      <p>Welcome to the Teleservices Documentation. Here you will find comprehensive information on how to use our services and APIs to enhance your broadcasting experience on Telegram.</p>
+    </section>
+    
+    <section id="getting-started">
+      <h2>Getting Started</h2>
+      <p>To get started with Teleservices Broadcast API, follow these steps:</p>
+      
+      <div class="step">
+        <h3>Step 1: Generate Access Token</h3>
+        <p>First, you need to generate an access token to authenticate your requests to the Teleservices API.</p>
+        <p>Click on the button below to go to the access token generator page:</p>
+        <a href="https://teleservices.free.nf/accesstoken.php" class="btn btn-primary">Generate Access Token</a>
+      </div>
+      
+      <div class="step">
+        <h3>Step 2: Grab the Token and Access API Endpoints</h3>
+        <p>Once you have generated the access token, you can use it to access Our API endpoint</p>
+      
+      </div>
+      
+    </section>
+    
+    <section id="usage">
+  <div class="container">
+    <h2>How to Access Our APIs</h2>
+    
+    <div class="step">
+      <h3>Step 3: How to Use Our APIs</h3>
+      <p>To use our APIs, follow these steps:</p>
+      
+      <div class="sub-step">
+        <h4>1. Add User to Database Endpoint :</h4>
+        <p>This endpoint allows you to add a user to the database.</p>
+        <p>It requires the following parameters:</p>
+        <ul>
+          <li><code>bot_token</code>: The actual Bot token of your telegram Bot.</li>
+          <li><code>user_id</code>: The telegram id of your Bot user</li>
+          <li><code>Access Token </code>: The Access Token Genarated By our service..</li>
+        </ul>
+        <p>Here's an example of how to make a request using  Js (Bot.Buisness):</p>
+
+        <pre><code class="language-javascript">const url = "https://addteleservices.soumya765.workers.dev"
+
+  HTTP.post({
+    url: url,
+    headers: { "content-type": "application/json" },
+        body: {
+          access_token: "Your Access Token",
+          bot_token: "Your Bot Token",
+          user_id: "User telegram Id"
+        },
+  })
+
+//You can Use both Post or Get Method 
+  </code></pre>
+  
+      </div>
+      
+      <div class="sub-step">
+        <h4>2. Broadcast Message Endpoint (POST /api/broadcast):</h4>
+        <p>This endpoint allows you to broadcast a message to multiple users.</p>
+        <p>It requires the following parameters:</p>
+        <ul>
+               <li><code>bot_token</code>: The actual Bot token of your telegram Bot.</li>
+          <li><code>admin_id</code>: The Admin id of your Bot</li>
+          <li><code>access_token </code>: The Access Token Genarated By our service..</li>
+               <li><code>caption</code>: Yor caption t.</li>
+          <li><code>text</code>: The telegram id of your Bot user</li>
+          <li><code>file_id:</code>: The file like photo, video etc ... , That you want to Broadcast .</li>
+          <li><code>text</code>: The message you want to broadcast.</li>
+        </ul>
+        <p>Here's an example of how to make a request using JS(Bot.Buisness):</p>
+        <pre><code class="language-javascript">var url = "https://broadcast.soumya765.workers.dev"
+          
+      HTTP.post({
+        url: url,
+        headers: { "content-type": "application/json" },
+        body: {
+          method: "",//Your Method like sendMessage, sendPhoto,sendDocument etc..
+          text: "Your Text",
+          access_token: "Your Access Token ",
+          bot_token: "Your Bot Token",
+          admin: "Admin Id",
+          file_id: "File ID",
+          caption: "Your Caption",
+          parseMode: "html", //you can change it to Markdown
+          disableWebPreview: true,//boolean value [ture/false]
+          protectContent: false //pass true if you don't allow to forward/save message
+        },
+      
+      })
+    
+</code></pre>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<section id="implementation">
+  <div class="container">
+    <h2>How to Implement Api all features into your Bot (Bot.Buisness)</h2>
+    
+    <div class="step">
+      <h3>Step 4: How to Implement Api to Your Code</h3>
+      <p>To implement Api into bot your code, follow these steps:</p>
+      
+      <div class="sub-step">
+        <h4>1. adduser in our database using api </h4>
+        <p>First, Got to your bot commands in bot.buisness then find command <b>/start</b> Then go to start command  and edit like this </p>
+                      
+        <pre><code class="language-js">const url = "https://addteleservices.soumya765.workers.dev"
+const botToken = bot.token;
+const accessToken = "Your Access Token";
+const user_id = user.telegramid;
+  HTTP.post({
+    url: url,
+    headers: { "content-type": "application/json" },
+        body: {
+          access_token: botToken,
+          bot_token: accessToken,
+          user_id: user_id
+        },
+  })
+  //other content of your code goes same
+  </code></pre>
+
+      </div>
+      
+      <div class="sub-step">
+        <h4>2. Send Broadcast message to all users </h4>
+        <p>Now, you need to send Broadcast message to users For this make a command name <b>/broadcast</b> then add these codes here like this : </p>
+        <pre><code class="language-javascript">var admin = 5723455420//replce with your admin id ;
+var users = user.telegramid
+var botLink = "@" + bot.name
+
+if (users === admin) {
+  var url = "https://broadcast.soumya765.workers.dev"
+  var botToken = bot.token
+  var accessToken = "Your access Token " // Generate it from our home page https://teleservices.free.nf/accesstoken.php
+
+  try {
+    var msg = message
+    function broadcast(type, method, cap, fileid) {
+      HTTP.post({
+        url: url,
+        headers: { "content-type": "application/json" },
+        body: {
+          method: method,
+          text: cap,
+          access_token: accessToken,
+          bot_token: botToken,
+          admin: admin,
+          type: type,
+          file_id: fileid,
+          caption: cap,
+          parseMode: "html", //you can change it to Markdown
+          disableWebPreview: true,//boolean value [ture/false]
+          protectContent: false //pass true if you don't allow to forward/save message
+        },
+       
+      })
+    }
+    var boarding = " <b><u>Broadcast By Admin</u></b> \n\n"
+    var caption = !request.caption ? boarding : boarding + " " + request.caption
+
+    if (request.photo[0]) {
+      broadcast("photo", "sendPhoto", caption, request.photo[0].file_id)
+      return
+    }
+    if (request.text) {
+      broadcast(
+        "text",
+        "sendMessage",
+        " <b><u>Broadcast By Admin</u></b> \n\n" + message,
+        null
+      )
+      return
+    }
+    if (request.video) {
+      broadcast("video", "sendVideo", caption, request.video.file_id)
+      return
+    }
+    if (request.audio) {
+      broadcast("audio", "sendAudio", caption, request.audio.file_id)
+      return
+    }
+    if (request.document) {
+      broadcast("document", "sendDocument", caption, request.document.file_id)
+      return
+    }
+    if (request.sticker) {
+      broadcast("sticker", "sendSticker", null, request.sticker.file_id)
+      return
+    }
+    if (request.animation) {
+      broadcast(
+        "animation",
+        "sendAnimation",
+        caption,
+        request.animation.file_id
+      )
+      return
+    }
+    if (request.voice) {
+      broadcast("voice", "sendVoice", caption, request.voice.file_id)
+      return
+    }
+    if (request.video_note) {
+      broadcast("video_note", "sendVideo", caption, request.video_note.file_id)
+      return
+    }
+  } catch (err) {
+    Bot.sendMessage(
+      err + "\n\n*Please Reach out @BjsCodesChat with Error Screenshot.*"
+    )
+  }
+  return
+} else {
+  var notAdminText = "<i>⚠️ You're not the admin of " + botLink + ".</i>"
+
+  Api.sendMessage({
+    text: notAdminText,
+    parse_mode: "html"
+  })
+}
+</code></pre>
+<p>📌Note : Our api is now in Beta Version so some bugs may cuse for error</p>
+      </div>
+      
+    </div>
+  </div>
+</section>
+<section id="faq">
+  <div class="container">
+    <h2>Frequently Asked Questions (FAQ)</h2>
+    
+    <div class="faq-item">
+      <div class="question">
+        <h3>Q: How can I get support for Teleservices?</h3>
+        <button class="toggle-answer">+</button>
+      </div>
+      <div class="answer">
+        <p>A: For support inquiries, please contact us on telegram.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="question">
+        <h3>Q: Can I integrate Teleservices with my existing bot?</h3>
+        <button class="toggle-answer">+</button>
+      </div>
+      <div class="answer">
+        <p>A: Yes, Teleservices API is designed to be easily integrated with existing Telegram bots. You jsut need Your bot users id list to store it on ours database .</p>
+      </div>
+    </div>
+        <div class="faq-item">
+      <div class="question">
+        <h3>Q: Can I Recover My Access Token ?</h3>
+        <button class="toggle-answer">+</button>
+      </div>
+      <div class="answer">
+        <p>A: Yes , Recovering Your Acces Token is very easy , Just Go our home page and find A Button call Recover Token, Then you can recover your access token using your bot token.</p>
+      </div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="question">
+        <h3>Q: Is it safe to use ?</h3>
+        <button class="toggle-answer">+</button>
+      </div>
+      <div class="answer">
+        <p>A: Yes , Teleservices is safe to use.</p>
+      </div>
+    </div>
+    
+    <!-- Add more FAQ items as needed -->
+  </div>
+</section>
+    <!-- Other sections like Usage, API Reference, FAQ -->
+  </div>
+</main>
+<footer>
+  <div class="container">
+    <p>&copy; 2024 Teleservices All Rights Reserved </p>
+  </div>
+</footer>
+<!-- Include Prism.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+<script>
+function copyCode(button) {
+  var codeBlock = button.previousElementSibling;
+  var codeText = codeBlock.textContent;
+  navigator.clipboard.writeText(codeText).then(function() {
+    var tooltip = button.nextElementSibling;
+    tooltip.classList.add("show");
+    setTimeout(function() {
+      tooltip.classList.remove("show");
+    }, 1000);
+  }, function() {
+    alert("Failed to copy code.");
+  });
+ 
+}
+
+</script>
+<script>
+  document.querySelectorAll('.question').forEach(question => {
+  question.addEventListener('click', () => {
+    const answer = question.nextElementSibling;
+    const toggleButton = question.querySelector('.toggle-answer');
+    answer.classList.toggle('show-answer');
+    toggleButton.classList.toggle('rotate');
+  });
+});
+</script>
+</body>
+</html>
