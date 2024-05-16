@@ -47,18 +47,18 @@
   font-size: 24px;
   color: #777;
 }
-h6 {
+.h6 {
   color: #333;
   font-size: 28px;
   margin-bottom: 20px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
-p2 {
+.p2 {
   color: #555;
   font-size: 16px;
   margin-bottom: 25px;
 }
-a2 {
+.a2 {
   display: inline-block;
   background-color: #0088cc;
   color: #fff;
@@ -68,6 +68,6 @@ a2 {
   font-size: 18px;
   transition: background-color 0.3s;
 }
-a2:hover {
+.a2:hover {
   background-color: #005580;
       }
