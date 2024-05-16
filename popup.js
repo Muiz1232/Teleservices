@@ -1,26 +1,26 @@
 // Function to show popup after 2 seconds
 setTimeout(function() {
-  document.getElementById('popup').style.display = 'block';
+  showPopup();
 }, 2000);
+
+// Function to show popup
+function showPopup() {
+  document.getElementById('popup').style.display = 'block';
+}
 
 // Function to close popup
 function closePopup() {
   document.getElementById('popup').style.display = 'none';
 }
 
-// Function to show popup again if the user stays for more than 1 minute
-let showPopupTimeout;
-function showPopupAgain() {
-  showPopupTimeout = setTimeout(function() {
-    document.getElementById('popup').style.display = 'block';
-  }, 30000); // 1 minute in milliseconds
+// Function to show popup randomly between 2 to 5 minutes
+function showPopupRandomly() {
+  const randomTime = Math.floor(Math.random() * (300000 - 120000 + 1)) + 120000; // Random time between 2 to 5 minutes in milliseconds (1 minute = 60000 milliseconds)
+  setTimeout(function() {
+    showPopup();
+    showPopupRandomly();
+  }, randomTime);
 }
 
-// Call the function to start the timeout
-showPopupAgain();
-
-// Add an event listener to reset the timeout when the user interacts with the page
-document.addEventListener('mousemove', function() {
-  clearTimeout(showPopupTimeout);
-  showPopupAgain();
-});
+// Call the function to show popup randomly
+showPopupRandomly();
