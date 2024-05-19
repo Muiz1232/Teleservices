@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="form-box" id="form-box">
+            <h2>Donation Page</h2>
+            <form id="donation-form">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Your Email Address*</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="currency">Choose Currency</label>
+                <select id="currency" name="currency" required>
+                    <option value="" disabled selected>Choose currency</option>
+                    <option value="btc">Bitcoin (BTC)</option>
+                    <option value="eth">Ethereum (ETH)</option>
+                    <option value="usdc">USD Coin (USDC)</option>
+                    <option value="trx">Tron (TRX)</option>
+                    <option value="bnb">BNB (BNB)</option>
+                </select>
+
+                <button type="button" id="proceed-payment">Proceed to Payment</button>
+            </form>
+        </div>
+
+        <div class="payment-details" id="payment-details" style="display:none;">
+            <h2>Pay Details</h2>
+            <p id="currency-address"></p>
+            <div class="qr-code"></div>
+            <a href="https://t.me/oxapay_bot" class="telegram-button">OxaPay Telegram Wallet</a>
+            <div class="powered-by">
+                Powered by <img src="oxapay_logo.png" alt="OxaPay">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+  </html>
