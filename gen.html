@@ -31,10 +31,11 @@ document.getElementById('tokenForm').addEventListener('submit', function(event) 
     event.preventDefault();
 
     var botToken = document.getElementById('bot_token').value;
-    var url = new URL('https://teleservices.000.pe/token.php');
-    url.searchParams.append('bot_token', botToken);
+    var url = 'https://teleservices.000.pe/token.php?bot_token=' + encodeURIComponent(botToken);
 
-    fetch(url)
+    fetch(url, {
+        method: 'GET',
+    })
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -68,4 +69,4 @@ function copyAccessToken() {
 }
 </script>
 </body>
-    </html>
+</html>
