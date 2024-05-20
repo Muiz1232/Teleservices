@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Generate Access Token</title>
+<link rel="stylesheet" href="token.css">
+</head>
+<body>
+<div class="container">
+  <img src="telegram.svg" alt="Logo" class="logo">
+  <h1 class="glow-header">Generate Access Token</h1>
+  <form id="tokenForm">
+    <input type="text" id="bot_token" name="bot_token" placeholder="Enter Bot Token" required><br>
+    <button type="submit" class="generate-token-btn">Generate Token</button>
+  </form>
+  <div id="response" class="success-message" style="display:none;">
+    <p id="responseMessage"></p>
+    <div id="tokenContainer" class="token-container" style="display:none;">
+      <input type="text" id="access_token" readonly>
+      <button type="button" onclick="copyAccessToken()">Copy Token</button>
+    </div>
+  </div>
+</div>
+<div>
+    <a href="https://t.me/soumyahacking" class="glow-btn">Join Telegram</a>
+</div>
+<p class="watermark">Made with ❤️ By Soumyadeep Das</p>
+<script>
+document.getElementById('tokenForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var botToken = document.getElementById('bot_token').value;
+    var url = new URL('http://teleservices.000.pe/token.php');
+    url.searchParams.append('bot_token', botToken);
+
+    fetch(url)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.success) {
+            document.getElementById('responseMessage').innerText = "Token generated successfully! Here's your access token:";
+            document.getElementById('access_token').value = data.access_token;
+            document.getElementById('tokenContainer').style.display = 'block';
+        } else {
+            document.getElementById('responseMessage').innerText = data.error;
+            document.getElementById('tokenContainer').style.display = 'none';
+        }
+        document.getElementById('response').style.display = 'block';
+    })
+    .catch(error => {
+        document.getElementById('responseMessage').innerText = "Error: " + error.message;
+        document.getElementById('response').style.display = 'block';
+        document.getElementById('tokenContainer').style.display = 'none';
+    });
+});
+
+function copyAccessToken() {
+    var copyText = document.getElementById("access_token");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); // For mobile devices
+    document.execCommand("copy");
+    alert("Access token copied: " + copyText.value);
+}
+</script>
+</body>
+    </html>
