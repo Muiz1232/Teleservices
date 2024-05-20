@@ -2,7 +2,7 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "destination": "/Error/error.html",
+      "destination": "/Error",
       "statusCode": 404
     }
   ]
