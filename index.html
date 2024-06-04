@@ -52,23 +52,211 @@
 
 <style>
 body {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    overflow-x: hidden; /* Prevent horizontal scroll */
     font-family: 'Roboto', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
+    color: #d4a017; /* Dark yellow */
+    font-family: 'Quicksand', sans-serif;
+}
+
+#navbar {
+    background-color: #000; /* Black background */
+    color: #d4a017; /* Dark yellow text */
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-family: 'Quicksand', sans-serif;
 }
 
 #menu-icon {
+    font-size: 24px;
     cursor: pointer;
+    margin-left: 5px;
+}
+
+#navbar a {
+    color: #d4a017; /* Dark yellow text */
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+#navbar a:hover {
+    text-decoration: underline;
+}
+
+#logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+#logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+
+#tools-mall {
+    font-weight: bold;
+    font-size: 20px;
 }
 
 #sidebar {
+    display: block;
+    background-color: #000; /* Black background */
+    position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100%;
+    width: 200px;
+    padding-top: 60px;
+    z-index: 1;
     transition: left 0.5s ease-in-out;
 }
 
 #sidebar.open {
     left: 0;
+}
+
+#sidebar a {
+    padding: 15px;
+    text-decoration: none;
+    color: #d4a017; /* Dark yellow text */
+    display: block;
+    transition: 0.3s;
+    font-family: 'Quicksand', sans-serif;
+}
+
+#sidebar a:hover {
+    background-color: #333; /* Darker shade for hover effect */
+}
+
+#close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #d4a017;
+    display: flex;
+    align-items: center;
+}
+
+#tools-mall-sidebar {
+    display: flex;
+    align-items: center;
+    margin-right: 60px;
+}
+
+#logo-sidebar {
+    max-width: 30px;
+    height: auto;
+    margin-right: 5px;
+    border-radius: 20px;
+}
+
+#tools-mall-sidebar-name {
+    font-weight: bold;
+    font-size: 13px;
+    margin-left: 2px;
+    margin-top: 2px;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.main {
+    margin-left: 200px;
+    font-size: 20px;
+    padding: 0px 10px;
+}
+
+.toggle input[type='checkbox'] {
+    display: none;
+}
+
+.toggle label {
+    background-color: #777;
+    border: 2px solid #555;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: all ease-in-out 0.3s;
+    width: 50px;
+    height: 25px;
+    left: -90px;
+    top: 2px;
+}
+
+.toggle label::after {
+    background-color: #555;
+    border-radius: 50%;
+    content: ' ';
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    transition: all ease-in-out 0.5s;
+    width: 21px;
+    height: 21px;
+}
+
+.toggle input[type='checkbox']:checked ~ label {
+    background-color: #d4a017; /* Dark yellow */
+    border-color: #d4a017;
+}
+
+.toggle input[type='checkbox']:checked ~ label::after {
+    background-color: #e67e22;
+    transform: translateX(25px);
+}
+
+.pattern {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+}
+
+#popup .popup-content {
+    background-color: #d4a017; /* Dark yellow */
+    color: #000; /* Black text */
+    font-family: 'Quicksand', sans-serif;
+}
+
+.btn-primary {
+    background-color: #d4a017; /* Dark yellow */
+    border-color: #d4a017;
+    color: #000; /* Black text */
+    font-family: 'Quicksand', sans-serif;
+}
+
+.btn-primary:hover {
+    background-color: #e67e22;
+    border-color: #e67e22;
+}
+
+.footer {
+    background-color: #000; /* Black background */
+    color: #d4a017; /* Dark yellow text */
+    padding: 10px 0;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.footer a {
+    color: #d4a017; /* Dark yellow text */
+}
+
+.footer a:hover {
+    color: #e67e22;
 }
 </style>
 </head>
@@ -91,62 +279,60 @@ h1, h2, h3, h4, h5, h6 {
   </div>
 </div>
 
-<div id="sidebar" class="bg-black fixed top-0 left-[-250px] h-full w-40 pt-16 z-10">
-  <div id="close-btn" class="absolute top-2 right-2 text-yellow-600 text-xl cursor-pointer" onclick="closeSidebar()">
+<div id="sidebar" class="bg-black fixed top-0 left-0 h-full w-48 pt-16 transition-transform duration-500 transform -translate-x-full">
+  <div id="close-btn" class="absolute top-2 right-2 text-2xl cursor-pointer text-yellow-600">
     <div id="tools-mall-sidebar" class="flex items-center mr-16">
-      <img id="logo-sidebar" src="Logo.jpg" alt="Logo" class="w-7 h-auto mr-2 rounded-full">
-      <div id="tools-mall-sidebar-name" class="font-bold text-sm mt-1">Teleservices</div>
+      <img id="logo-sidebar" src="Logo.jpg" alt="Logo" class="max-w-8 h-auto rounded-full mr-2">
+      <div id="tools-mall-sidebar-name" class="font-bold text-sm ml-1 mt-1">Teleservices</div>
     </div>
     <i class="fas fa-times"></i>
   </div>
 
-  <a href="#" class="block py-4 px-6 text-yellow-600 hover:bg-gray-800"><i class="fas fa-home"></i> Home </a>
-  <a href="/Docs" class="block py-4 px-6 text-yellow-600 hover:bg-gray-800"><i class="fas fa-code"></i> Documentation</a>
-  <a href="http://teleservices.rf.gd/accesstoken.php" class="block py-4 px-6 text-yellow-600 hover:bg-gray-800"><i class="fas fa-cloud-upload-alt"></i> Access Token</a>
-  <a href="http://teleservices.rf.gd/recover.php" class="block py-4 px-6 text-yellow-600 hover:bg-gray-800"><i class="fas fa-undo"></i> Recover Token</a>
-  <a href="https://t.me/payouts33" class="block py-4 px-6 text-yellow-600 hover:bg-gray-800"><i class="fas fa-phone"></i> Contact Us</a>
+  <a href="#" class="block p-4 text-yellow-600 hover:bg-gray-700"><i class="fas fa-home"></i> Home </a>
+  <a href="/Docs" class="block p-4 text-yellow-600 hover:bg-gray-700"><i class="fas fa-code"></i> Documentation</a>
+  <a href="http://teleservices.rf.gd/accesstoken.php" class="block p-4 text-yellow-600 hover:bg-gray-700"><i class="fas fa-cloud-upload-alt"></i> Access Token</a>
+  <a href="http://teleservices.rf.gd/recover.php" class="block p-4 text-yellow-600 hover:bg-gray-700"><i class="fas fa-undo"></i> Recover Token</a>
+  <a href="https://t.me/payouts33" class="block p-4 text-yellow-600 hover:bg-gray-700"><i class="fas fa-phone"></i> Contact Us</a>
 </div>
 
-<div class="main ml-40 text-lg">
-  <section id="hero" class="pattern py-12">
-    <div class="container mx-auto text-center">
-      <h1 class="animate__animated animate__bounceInDown text-yellow-600">Welcome To Broadcast Management System</h1>
-      <p class="animate__animated animate__bounceInUp">Generate access tokens for your bot and manage high-speed broadcast seamlessly.</p>
-      <a href="http://teleservices.rf.gd/accesstoken.php" class="btn btn-primary bg-yellow-600 text-black py-2 px-4 rounded">Generate Now</a>
-    </div>
-  </section>
-  <section id="about" class="pattern py-12">
-    <div class="container mx-auto text-center">
-      <h2 class="text-yellow-600">About Our Project</h2>
-      <p>Welcome to our site dedicated to revolutionizing broadcasting on Telegram! Harnessing the power of our superfast API, we strive to deliver unparalleled efficiency and reliability in reaching your audience.</p>
-      <br><br>
-      <a href="/Docs" class="btn btn-primary bg-yellow-600 text-black py-2 px-4 rounded">Learn More</a>
-    </div>
-  </section>
-  <section id="features" class="pattern py-12">
-    <div class="container mx-auto text-center">
-      <h2 class="text-yellow-600">Features</h2>
-      <ul class="list-none space-y-4">
-        <li><i class="fas fa-bolt"></i> High-speed API</li>
-        <li><i class="fas fa-user-shield"></i> Secure and Reliable</li>
-        <li><i class="fas fa-cogs"></i> Easy Integration</li>
-        <li><i class="fas fa-chart-line"></i> Performance Tracking</li>
-      </ul>
-    </div>
-  </section>
-  <section id="contact" class="pattern py-12">
-    <div class="container mx-auto text-center">
-      <h2 class="text-yellow-600">Contact Us</h2>
-      <p>Have questions or need support? Reach out to us:</p>
-      <ul class="list-none space-y-2">
-        <li><i class="fas fa-envelope"></i> Email: support@teleservices.com</li>
-        <li><i class="fab fa-telegram"></i> Telegram: @teleservices_support</li>
-      </ul>
-    </div>
-  </section>
+<div class="pattern">
+<section id="hero" class="container mx-auto py-8">
+  <div class="text-center">
+    <h1 class="animateanimated animatebounceInDown text-yellow-600">Welcome To Broadcast Management System</h1>
+    <p class="animateanimated animatebounceInUp">Generate access tokens for your bot and manage high-speed broadcast seamlessly.</p>
+    <a href="http://teleservices.rf.gd/accesstoken.php" class="btn btn-primary inline-block mt-4">Generate Now</a>
+  </div>
+</section>
+<section id="about" class="container mx-auto py-8">
+  <h2 class="text-yellow-600">About Our Project</h2>
+  <p>Welcome to our site dedicated to revolutionizing broadcasting on Telegram! Harnessing the power of our superfast API, we strive to deliver unparalleled efficiency and reliability in reaching your audience.</p>
+  <br>
+  <br>
+  <a href="/Docs" class="btn btn-primary inline-block mt-4">Learn More</a>&nbsp;
+</section>
+<section id="features" class="container mx-auto py-8">
+  <h2 class="text-yellow-600">Features</h2>
+  <ul>
+    <li><i class="fas fa-bolt"></i> High-speed API</li>
+    <br>
+    <li><i class="fas fa-user-shield"></i> Secure and Reliable</li>
+    <br>
+    <li><i class="fas fa-cogs"></i> Easy Integration</li>
+    <br>
+    <li><i class="fas fa-chart-line"></i> Performance Tracking</li>
+  </ul>
+</section>
+<section id="contact" class="container mx-auto py-8">
+  <h2 class="text-yellow-600">Contact Us</h2>
+  <p>Have questions or need support? Reach out to us:</p>
+  <ul>
+    <li><i class="fas fa-envelope"></i> Email: support@teleservices.com</li>
+    <li><i class="fab fa-telegram"></i> Telegram: @teleservices_support</li>
+  </ul>
+</section>
 </div>
 
-<div class="footer bg-black text-yellow-600 py-4 text-center">
+<div class="footer bg-black text-yellow-600 py-2 text-center">
   <p>&copy; 2023 Teleservices. All Rights Reserved.</p>
 </div>
 
