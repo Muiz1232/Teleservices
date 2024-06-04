@@ -7,17 +7,14 @@
 <link rel="icon" href="Logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="popup.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
-<!-- Include Prism.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
-<!-- Include Prism.js CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -35,7 +32,6 @@
             }
         });
 
-        // Close sidebar when clicking a link inside it
         const sidebarLinks = document.querySelectorAll('#sidebar a');
         sidebarLinks.forEach(function (link) {
             link.addEventListener('click', function () {
@@ -52,27 +48,28 @@
         body.classList.remove('sidebar-open');
     }
 </script>
+
 <style>
 body {
-    background-color: #111; /* Dark black background */
-    color: #f1c40f; /* Dark yellow text */
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
     overflow-x: hidden; /* Prevent horizontal scroll */
-    font-family: 'Roboto', sans-serif; /* Apply the new font */
+    font-family: 'Roboto', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #f1c40f; /* Dark yellow */
-    font-family: 'Quicksand', sans-serif; /* Apply the new font */
+    color: #ff9900; /* Pornhub orange */
+    font-family: 'Quicksand', sans-serif;
 }
 
 #navbar {
-    background-color: #111; /* Dark black background */
-    color: #f1c40f; /* Dark yellow text */
+    background-color: #000; /* Black background */
+    color: #ff9900; /* Pornhub orange text */
     padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: 'Quicksand', sans-serif; /* Apply the new font */
+    font-family: 'Quicksand', sans-serif;
 }
 
 #menu-icon {
@@ -82,11 +79,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #navbar a {
-    color: #f1c40f; /* Dark yellow text */
+    color: #ff9900; /* Pornhub orange text */
     text-decoration: none;
     margin: 0 15px;
     font-size: 16px;
-    font-family: 'Quicksand', sans-serif; /* Apply the new font */
+    font-family: 'Quicksand', sans-serif;
 }
 
 #navbar a:hover {
@@ -96,25 +93,25 @@ h1, h2, h3, h4, h5, h6 {
 #logo-container {
     display: flex;
     align-items: center;
-    justify-content: center; /* Changed from flex-end to center */
+    justify-content: center;
     width: 100%;
 }
 
 #logo {
-    width: 40px; /* Increase size */
-    height: 40px; /* Increase size */
+    width: 40px;
+    height: 40px;
     border-radius: 20px;
-    margin-right: 20px; /* Increase margin */
+    margin-right: 20px;
 }
 
 #tools-mall {
-    font-weight: bold; /* Make text bold */
-    font-size: 20px; /* Increase font size */
+    font-weight: bold;
+    font-size: 20px;
 }
 
 #sidebar {
     display: block;
-    background-color: #111; /* Dark black background */
+    background-color: #000; /* Black background */
     position: fixed;
     top: 0;
     left: -250px;
@@ -132,10 +129,10 @@ h1, h2, h3, h4, h5, h6 {
 #sidebar a {
     padding: 15px;
     text-decoration: none;
-    color: #f1c40f; /* Dark yellow text */
+    color: #ff9900; /* Pornhub orange text */
     display: block;
     transition: 0.3s;
-    font-family: 'Quicksand', sans-serif; /* Apply the new font */
+    font-family: 'Quicksand', sans-serif;
 }
 
 #sidebar a:hover {
@@ -148,7 +145,7 @@ h1, h2, h3, h4, h5, h6 {
     right: 10px;
     font-size: 20px;
     cursor: pointer;
-    color: #f1c40f; /* Dark yellow */
+    color: #ff9900;
     display: flex;
     align-items: center;
 }
@@ -171,7 +168,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 13px;
     margin-left: 2px;
     margin-top: 2px;
-    font-family: 'Quicksand', sans-serif; /* Apply the new font */
+    font-family: 'Quicksand', sans-serif;
 }
 
 .main {
@@ -213,52 +210,52 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .toggle input[type='checkbox']:checked ~ label {
-    background-color: #f1c40f; /* Dark yellow */
-    border-color: #f1c40f; /* Dark yellow */
+    background-color: #ff9900; /* Pornhub orange */
+    border-color: #ff9900;
 }
 
 .toggle input[type='checkbox']:checked ~ label::after {
-    background-color: #e67e22; /* Slightly different shade for toggle */
+    background-color: #e67e22;
     transform: translateX(25px);
 }
 
 .pattern {
-    background-color: #111; /* Dark black background */
-    color: #f1c40f; /* Dark yellow text */
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
 }
 
 #popup .popup-content {
-    background-color: #f1c40f; /* Dark yellow */
-    color: #111; /* Dark black text */
-    font-family: 'Quicksand', sans-serif; /* Apply the new font */
+    background-color: #ff9900; /* Pornhub orange */
+    color: #000; /* Black text */
+    font-family: 'Quicksand', sans-serif;
 }
 
 .btn-primary {
-    background-color: #f1c40f; /* Dark yellow */
-    border-color: #f1c40f; /* Dark yellow */
-    color: #111; /* Dark black text */
-    font-family: 'Quicksand', sans-serif; /* Apply the new font */
+    background-color: #ff9900; /* Pornhub orange */
+    border-color: #ff9900;
+    color: #000; /* Black text */
+    font-family: 'Quicksand', sans-serif;
 }
 
 .btn-primary:hover {
-    background-color: #e67e22; /* Slightly different shade for hover */
-    border-color: #e67e22; /* Slightly different shade for hover */
+    background-color: #e67e22;
+    border-color: #e67e22;
 }
 
 .footer {
-    background-color: #111; /* Dark black background */
-    color: #f1c40f; /* Dark yellow text */
+    background-color: #000; /* Black background */
+    color: #ff9900; /* Pornhub orange text */
     padding: 10px 0;
     text-align: center;
-    font-family: 'Quicksand', sans-serif; /* Apply the new font */
+    font-family: 'Quicksand', sans-serif;
 }
 
 .footer a {
-    color: #f1c40f; /* Dark yellow text */
+    color: #ff9900; /* Pornhub orange text */
 }
 
 .footer a:hover {
-    color: #e67e22; /* Slightly different shade for hover */
+    color: #e67e22;
 }
 </style>
 </head>
@@ -292,22 +289,22 @@ h1, h2, h3, h4, h5, h6 {
 
   <a href="#"><i class="fas fa-home"></i> Home </a>
   <a href="/Docs"><i class="fas fa-code"></i> Documentation</a>
-  <a href="http://teleservices.rf.gd/accesstoken.php"><i class="fas fa-cloud-upload"></i> Access Token</a>
+  <a href="http://teleservices.rf.gd/accesstoken.php"><i class="fas fa-cloud-upload-alt"></i> Access Token</a>
   <a href="http://teleservices.rf.gd/recover.php"><i class="fas fa-undo"></i> Recover Token</a>
-  <a href="https://t.me/payouts33"><i class="fa-solid fa-phone"></i> Contact Us</a>
+  <a href="https://t.me/payouts33"><i class="fas fa-phone"></i> Contact Us</a>
 </div>
 
 <div class="pattern">
 <section id="hero">
   <div class="container">
-    <h1 class="animate__animated animate__bounceInDown">Welcome To Broadcast Management system</h1>
+    <h1 class="animate__animated animate__bounceInDown">Welcome To Broadcast Management System</h1>
     <p class="animate__animated animate__bounceInUp">Generate access tokens for your bot and manage high-speed broadcast seamlessly.</p>
     <a href="http://teleservices.rf.gd/accesstoken.php" class="btn btn-primary">Generate Now</a>
   </div>
 </section>
 <section id="about">
   <div class="container">
-    <h2 style="color: #f1c40f;">About Our Project</h2>
+    <h2 style="color: #ff9900;">About Our Project</h2>
     <p>Welcome to our site dedicated to revolutionizing broadcasting on Telegram! Harnessing the power of our superfast API, we strive to deliver unparalleled efficiency and reliability in reaching your audience.</p>
     <br> 
     <br> 
@@ -316,7 +313,7 @@ h1, h2, h3, h4, h5, h6 {
 </section>
 <section id="features">
   <div class="container">
-    <h2 style="color: #f1c40f;">Features</h2>
+    <h2 style="color: #ff9900;">Features</h2>
     <ul>
       <li><i class="fas fa-bolt"></i> High-speed API</li>
       <li><i class="fas fa-user-shield"></i> Secure and Reliable</li>
@@ -327,7 +324,7 @@ h1, h2, h3, h4, h5, h6 {
 </section>
 <section id="contact">
   <div class="container">
-    <h2 style="color: #f1c40f;">Contact Us</h2>
+    <h2 style="color: #ff9900;">Contact Us</h2>
     <p>Have questions or need support? Reach out to us:</p>
     <ul>
       <li><i class="fas fa-envelope"></i> Email: support@teleservices.com</li>
@@ -341,7 +338,6 @@ h1, h2, h3, h4, h5, h6 {
   <p>&copy; 2023 Teleservices. All Rights Reserved.</p>
 </div>
 
-<!-- Include Prism.js script -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
 </body>
 </html>
