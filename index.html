@@ -20,17 +20,18 @@
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         const sidebar = document.getElementById('sidebar');
-        const toggle = document.getElementById('toggle');
         const body = document.body;
 
         document.getElementById('menu-icon').addEventListener('click', function () {
-            sidebar.style.left = (sidebar.style.left === '0px' || sidebar.style.left === '') ? '-250px' : '0px';
             body.classList.toggle('sidebar-open');
         });
 
-        toggle.addEventListener('change', function () {
-            body.classList.toggle('dark-theme', toggle.checked);
-        });
+        const toggle = document.getElementById('toggle');
+        if (toggle) {
+            toggle.addEventListener('change', function () {
+                body.classList.toggle('dark-theme', toggle.checked);
+            });
+        }
 
         // Close sidebar when clicking a link inside it
         const sidebarLinks = document.querySelectorAll('#sidebar a');
@@ -44,6 +45,7 @@
 
     function closeSidebar() {
         document.getElementById('sidebar').style.left = '-250px';
+        document.body.classList.remove('sidebar-open');
     }
 </script>
 <style>
@@ -98,7 +100,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #sidebar {
     display: block;
-    background-color: #00aaff;
+    background-color: #00c27b; /* Changed to match the header color */
     position: fixed;
     top: 0;
     left: -250px;
@@ -106,7 +108,11 @@ h1, h2, h3, h4, h5, h6 {
     width: 200px;
     padding-top: 60px;
     z-index: 1;
-    transition: left 0.5s ease-in-out;
+    transition: left 0.3s ease-in-out; /* Ensure smooth transition */
+}
+
+body.sidebar-open #sidebar {
+    left: 0;
 }
 
 #sidebar a {
