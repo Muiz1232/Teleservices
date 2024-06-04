@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
 <meta charset="UTF-8">
-    <meta name="monetag" content="8244b1127cdc49bedc4d5e9fe2553981">
+<meta name="monetag" content="8244b1127cdc49bedc4d5e9fe2553981">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Teleservices</title>
-    <link rel="icon" href="Logo.svg" type="image/svg">
-    <link rel="stylesheet" href="popup.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
+<link rel="icon" href="Logo.svg" type="image/svg">
+<link rel="stylesheet" href="popup.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
 <!-- Include Prism.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
 <!-- Include Prism.js CSS -->
@@ -19,211 +18,219 @@
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
 <script>
-  		document.addEventListener('DOMContentLoaded', function () {
-  const sidebar = document.getElementById('sidebar');
-  const toggle = document.getElementById('toggle');
-  const body = document.body;
+    document.addEventListener('DOMContentLoaded', function () {
+        const sidebar = document.getElementById('sidebar');
+        const toggle = document.getElementById('toggle');
+        const body = document.body;
 
-  document.getElementById('menu-icon').addEventListener('click', function () {
-    sidebar.style.left = (sidebar.style.left === '0px' || sidebar.style.left === '') ? '-250px' : '0px';
-    body.classList.toggle('sidebar-open');
-  });
+        document.getElementById('menu-icon').addEventListener('click', function () {
+            sidebar.style.left = (sidebar.style.left === '0px' || sidebar.style.left === '') ? '-250px' : '0px';
+            body.classList.toggle('sidebar-open');
+        });
 
-  toggle.addEventListener('change', function () {
-    body.classList.toggle('dark-theme', toggle.checked);
-  });
+        toggle.addEventListener('change', function () {
+            body.classList.toggle('dark-theme', toggle.checked);
+        });
 
-  // Close sidebar when clicking a link inside it
-  const sidebarLinks = document.querySelectorAll('#sidebar a');
-  sidebarLinks.forEach(function (link) {
-    link.addEventListener('click', function () {
-      sidebar.style.left = '-250px';
-      body.classList.remove('sidebar-open');
+        // Close sidebar when clicking a link inside it
+        const sidebarLinks = document.querySelectorAll('#sidebar a');
+        sidebarLinks.forEach(function (link) {
+            link.addEventListener('click', function () {
+                sidebar.style.left = '-250px';
+                body.classList.remove('sidebar-open');
+            });
+        });
     });
-  });
-});
-function closeSidebar() {
-  document.getElementById('sidebar').style.left = '-250px';
-}
 
+    function closeSidebar() {
+        document.getElementById('sidebar').style.left = '-250px';
+    }
 </script>
 <style>
-<style>
-.toggle input[type='checkbox'] {
-  display: none;
-}
-
-.toggle label {
-  background-color: #777;
-  border: 2px solid #555;
-  border-radius: 50px;
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: all ease-in-out 0.3s;
-  width: 50px;
-  height: 25px;
-  left: -90px;
-  top: 2px;
-  
-}
-
-.toggle label::after {
-  background-color: #555;
-  border-radius: 50%;
-  content: ' ';
-  cursor: pointer;
-  display: inline-block;
-  position: absolute;
-  left: 2px;
-  top: 2px;
-  transition: all ease-in-out 0.5s;
-  width: 21px;
-  height: 21px;
-}
-
-.toggle input[type='checkbox']:checked ~ label {
-  background-color: #00a0fc;
-  border-color: #006dc9;
-}
-
-.toggle input[type='checkbox']:checked ~ label::after {
-  background-color: #0054b0;
-  transform: translateX(25px);
-}
-#close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
-  cursor: pointer;
-  color: white;
-  display: flex;
-  align-items: center;
-}
-#tools-mall-sidebar {
-  display: flex;
-  align-items: center;
-  margin-right: 60px; /* Adjust as needed for spacing */
-}
-#logo-sidebar {
-  max-width: 30px; 
-  height: auto;
-  margin-right: 5px;
-  border-radius: 20px;
-}
-#tools-mall-sidebar-name {
-  font-weight: bold;
-  font-size: 13px; /* Set your desired font size */
-  margin-left: 2px; /* Adjust margin as needed */
-  margin-top: 2px;
-}
-#tools-mall {
-  margin-right: 5px; /* Adjust margin as needed */
-  font-size: 16px; /* Set a smaller font size */
-}
-
-#logo-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end; /* Move content to the right */
-  width: 100%; /* Ensure it takes the full width */
-}
-
-#logo {
-  width: 30px;
-  height: 30px;
-  border-radius: 20px;
-  margin-right: 10px;
+body {
+    background-color: #f0f0f0;
+    color: #000;
 }
 
 #navbar {
-  background-color: #343a40;
-  color: white;
-  padding: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    background-color: #00c27b;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-    #menu-icon {
-      font-size: 24px;
-      cursor: pointer;
-      margin-left: 5px;
-    }
-    #navbar a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-size: 16px;
-    }
-
-    #navbar a:hover {
-      text-decoration: underline;
-    }
-   #sidebar {
-      display: none;
-      background-color: #343a40;
-      position: fixed;
-      top: 0;
-      left: -250px;
-      height: 100%;
-      width: 200px;
-      padding-top: 60px;
-      z-index: 1;
-      transition: left 0.5s ease-in-out;
+#menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: 5px;
 }
 
-
-    #sidebar a {
-      padding: 15px;
-      text-decoration: none;
-      color: white;
-      display: block;
-      transition: 0.3s;
-    }
-
-    #sidebar a:hover {
-      background-color: #495057;
-    }
-    @media screen and (max-width: 600px) {
-      #navbar a {
-        display: none;
-      }
-
-      #menu-icon {
-        display: block;
-      }
-
-      #sidebar {
-        display: block;
-      }
-    }
-    .main {
-  margin-left: 200px; /* Same as the width of the sidenav */
-  font-size: 20px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
+#navbar a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
 }
 
-/* Add an active class to the active dropdown button */
-.active {
-  background-color: green;
-  color: white;
+#navbar a:hover {
+    text-decoration: underline;
 }
 
-/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
-.dropdown-container {
-  display: none;
-  background-color: #262626;
-  padding-left: 8px;
+#logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
 }
 
-/* Optional: Style the caret down icon */
-.fa-caret-down {
-  float: right;
-  padding-right: 8px;
+#logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+    margin-right: 10px;
 }
-</style>  
+
+#sidebar {
+    display: none;
+    background-color: #00aaff;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    height: 100%;
+    width: 200px;
+    padding-top: 60px;
+    z-index: 1;
+    transition: left 0.5s ease-in-out;
+}
+
+#sidebar a {
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+#sidebar a:hover {
+    background-color: #495057;
+}
+
+#close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+#tools-mall-sidebar {
+    display: flex;
+    align-items: center;
+    margin-right: 60px;
+}
+
+#logo-sidebar {
+    max-width: 30px;
+    height: auto;
+    margin-right: 5px;
+    border-radius: 20px;
+}
+
+#tools-mall-sidebar-name {
+    font-weight: bold;
+    font-size: 13px;
+    margin-left: 2px;
+    margin-top: 2px;
+}
+
+.main {
+    margin-left: 200px;
+    font-size: 20px;
+    padding: 0px 10px;
+}
+
+.toggle input[type='checkbox'] {
+    display: none;
+}
+
+.toggle label {
+    background-color: #777;
+    border: 2px solid #555;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: all ease-in-out 0.3s;
+    width: 50px;
+    height: 25px;
+    left: -90px;
+    top: 2px;
+}
+
+.toggle label::after {
+    background-color: #555;
+    border-radius: 50%;
+    content: ' ';
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    transition: all ease-in-out 0.5s;
+    width: 21px;
+    height: 21px;
+}
+
+.toggle input[type='checkbox']:checked ~ label {
+    background-color: #00aaff;
+    border-color: #006dc9;
+}
+
+.toggle input[type='checkbox']:checked ~ label::after {
+    background-color: #0054b0;
+    transform: translateX(25px);
+}
+
+.pattern {
+    background-color: #f8f8f8;
+}
+
+#popup .popup-content {
+    background-color: #ff6347;
+    color: white;
+}
+
+.btn-primary {
+    background-color: #00c27b;
+    border-color: #00c27b;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #009d63;
+    border-color: #009d63;
+}
+
+.footer {
+    background-color: #00c27b;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.footer a {
+    color: white;
+}
+
+.footer a:hover {
+    color: #ff6347;
+}
+</style>
 </head>
 <body>
     <!-- Popup HTML -->
@@ -239,11 +246,9 @@ function closeSidebar() {
 <div id="navbar">
   <div id="menu-icon" class="tap-shadow"><i class="fas fa-bars"></i></div>
   <div id="logo-container">
-
     <div id="tools-mall">Teleservices</div>
     <img id="logo" src="Logo.jpg" alt="Logo">
   </div>
- 
 </div>
 
 <div id="sidebar">
@@ -254,25 +259,19 @@ function closeSidebar() {
     </div>
     <i class="fas fa-times"></i>
   </div>
- 
 
-<a href="#"><i class="fas fa-home"></i> Home </a>
-
+  <a href="#"><i class="fas fa-home"></i> Home </a>
   <a href="/Docs"><i class="fas fa-code"></i> Documentation</a>
   <a href="http://teleservices.rf.gd/accesstoken.php"><i class="fas fa-cloud-upload"></i> Access Token</a>
-    <a href="http://teleservices.rf.gd/recover.php"><i class="fas fa-undo"></i> Recover Token</a>
-  
+  <a href="http://teleservices.rf.gd/recover.php"><i class="fas fa-undo"></i> Recover Token</a>
   <a href="https://t.me/payouts33"><i class="fa-solid fa-phone"></i> Contact Us</a>
-  
- 
 </div>
-</head>
-<body>
-  <div class="pattern">
+
+<div class="pattern">
 <section id="hero">
   <div class="container">
-    <h1 class="animate__animated animate__bounceInDown"> Welcome To Broadcast Management system </h1>
-    <p class="animate__animated animate__bounceInUp">Generate access tokens for your bot and manage high-speed broadcast samelessly.</p>
+    <h1 class="animate__animated animate__bounceInDown">Welcome To Broadcast Management system</h1>
+    <p class="animate__animated animate__bounceInUp">Generate access tokens for your bot and manage high-speed broadcast seamlessly.</p>
     <a href="http://teleservices.rf.gd/accesstoken.php" class="btn btn-primary">Generate Now</a>
   </div>
 </section>
@@ -280,114 +279,38 @@ function closeSidebar() {
   <div class="container">
     <h2>About Our Project</h2>
     <p>Welcome to our site dedicated to revolutionizing broadcasting on Telegram! Harnessing the power of our superfast API, we strive to deliver unparalleled efficiency and reliability in reaching your audience. With a passion for innovation, we're committed to optimizing your broadcasting experience, ensuring seamless communication and engagement. Join us as we redefine the future of Telegram broadcasting.</p>
-    <p> 📌 </p>
-    <p> 📌 </p>
-    <p> 📌 </p>
-    
-    <p>Our project is dedicated to transforming the landscape of Telegram broadcasting. Leveraging our cutting-edge API technology, we empower users to streamline their broadcasting processes, delivering messages swiftly and efficiently to their audience. Our commitment to innovation drives us to continually enhance our platform, providing users with unparalleled capabilities and flexibility. Join us on our journey as we revolutionize Telegram broadcasting and redefine the way messages are delivered and received.</p>
-  
-</section>
-
-<section id="social">
-  <div class="container">
-    <h2>Join Our Telegram Channel</h2>
-    <a href="https://t.me/payouts33" target="_blank" class="btn btn-primary join-telegram-btn">Join Now</a>
-
-</section>
-<section id="privacy-policy">
-  <div class="container">
-    <h2>Privacy Policy</h2>
-    <p>Your privacy is important to us. It is Teleservices' policy to respect your privacy regarding any information we may collect from you across our website, <a href="https://teleservices.vercel.app">Teleservices </a>, and other sites we own and operate.</p>
-    <p>We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent. We also let you know why we’re collecting it and how it will be used.</p>
-    <p>We only retain collected information for as long as necessary to provide you with your requested service. What data we store, we’ll protect within commercially acceptable means to prevent loss and theft, as well as unauthorized access, disclosure, copying, use, or modification.</p>
-    <p>We don’t share any personally identifying information publicly or with third-parties, except when required to by law.</p>
-    <p>Our website may link to external sites that are not operated by us. Please be aware that we have no control over the content and practices of these sites, and cannot accept responsibility or liability for their respective privacy policies.</p>
-    <p>You are free to refuse our request for your personal information, with the understanding that we may be unable to provide you with some of your desired services.</p>
-    <p>Your continued use of our website will be regarded as acceptance of our practices around privacy and personal information. If you have any questions about how we handle user data and personal information, feel free to contact us.</p>
+    <p>📌</p>
+    <a href="/Docs" class="btn btn-primary">Learn More</a>
   </div>
 </section>
-<section id="ads">
+<section id="features">
   <div class="container">
-    <h2>Advertising Disclosure</h2>
-    <p>Teleservices may contain advertisements, sponsored content, paid insertions, affiliate links, or other forms of monetization.</p>
-    <p>Teleservices abides by word of mouth marketing standards. We believe in honesty of relationship, opinion, and identity. The compensation received may influence the advertising content, topics, or posts made on this website. That content, advertising space, or post will be clearly identified as paid or sponsored content.</p>
-    <p>As an ad sponsore, we earn from qualifying purchases.</p>
+    <h2>Features</h2>
+    <ul>
+      <li><i class="fas fa-bolt"></i> High-speed API</li>
+      <li><i class="fas fa-user-shield"></i> Secure and Reliable</li>
+      <li><i class="fas fa-cogs"></i> Easy Integration</li>
+      <li><i class="fas fa-chart-line"></i> Performance Tracking</li>
+    </ul>
   </div>
 </section>
-
-
-
-<section id="faq">
+<section id="contact">
   <div class="container">
-    <h2>Frequently Asked Questions (FAQ)</h2>
-    
-   
-    <div class="faq-item">
-      <div class="question">
-        <h3>Q: How can I get support for Teleservices?</h3>
-        <button class="toggle-answer">+</button>
-      </div>
-      <div class="answer">
-        <p>A: For support inquiries, please contact us on telegram.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <div class="question">
-        <h3>Q: Can I integrate Teleservices with my existing bot?</h3>
-        <button class="toggle-answer">+</button>
-      </div>
-      <div class="answer">
-        <p>A: Yes, Teleservices API is designed to be easily integrated with existing Telegram bots. You jsut need Your bot users id list to store it on ours database .</p>
-      </div>
-    </div>
-        <div class="faq-item">
-      <div class="question">
-        <h3>Q: Can I Recover My Access Token ?</h3>
-        <button class="toggle-answer">+</button>
-      </div>
-      <div class="answer">
-        <p>A: Yes , Recovering Your Acces Token is very easy , Just Go our home page and find A Button call Recover Token, Then you can recover your access token using your bot token.</p>
-      </div>
-    </div>
-    
-    <div class="faq-item">
-      <div class="question">
-        <h3>Q: Is it safe to use ?</h3>
-        <button class="toggle-answer">+</button>
-      </div>
-      <div class="answer">
-        <p>A: Yes , Teleservices is safe to use.</p>
-      </div>
-    </div>
-    
-    <!-- Add more FAQ items as needed -->
+    <h2>Contact Us</h2>
+    <p>Have questions or need support? Reach out to us:</p>
+    <ul>
+      <li><i class="fas fa-envelope"></i> Email: support@teleservices.com</li>
+      <li><i class="fab fa-telegram"></i> Telegram: @teleservices_support</li>
+    </ul>
   </div>
 </section>
-<footer>
-  <div class="container">
-    <p>&copy; 2024 Teleservices All Rights Reserved </p>
-    <div class="social-icons">
-      <a href="www.facebook.com/" class="social-icon"><img src="facebook.svg" alt="Facebook"></a>
-      <a href="https://t.me/payouts33" class="social-icon"><img src="telegram.svg" alt="Twitter"></a>
-      <a href="https://www.instagram.com/wanted_goku_777?igsh=MWdpYWFjc3ZsYnhxMQ==" class="social-icon"><img src="instagram1.svg" alt="Instagram"></a>
-    </div>
-  </div>
-</footer>
 </div>
-<script src="script.js"></script>
-<script>
-  document.querySelectorAll('.question').forEach(question => {
-  question.addEventListener('click', () => {
-    const answer = question.nextElementSibling;
-    const toggleButton = question.querySelector('.toggle-answer');
-    answer.classList.toggle('show-answer');
-    toggleButton.classList.toggle('rotate');
-  });
-});
-</script>
-    <script src="popup.js"></script>
-    
+
+<div class="footer">
+  <p>&copy; 2023 Teleservices. All Rights Reserved.</p>
+</div>
+
+<!-- Include Prism.js script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
 </body>
 </html>
-
