@@ -21,16 +21,17 @@
     document.addEventListener('DOMContentLoaded', function () {
         const sidebar = document.getElementById('sidebar');
         const menuIcon = document.getElementById('menu-icon');
+        const closeBtn = document.getElementById('close-btn');
         const body = document.body;
 
         menuIcon.addEventListener('click', function () {
-            if (sidebar.classList.contains('open')) {
-                sidebar.classList.remove('open');
-                body.classList.remove('sidebar-open');
-            } else {
-                sidebar.classList.add('open');
-                body.classList.add('sidebar-open');
-            }
+            sidebar.classList.toggle('open');
+            body.classList.toggle('sidebar-open');
+        });
+
+        closeBtn.addEventListener('click', function () {
+            sidebar.classList.remove('open');
+            body.classList.remove('sidebar-open');
         });
 
         const sidebarLinks = document.querySelectorAll('#sidebar a');
@@ -41,31 +42,24 @@
             });
         });
     });
-
-    function closeSidebar() {
-        const sidebar = document.getElementById('sidebar');
-        const body = document.body;
-        sidebar.classList.remove('open');
-        body.classList.remove('sidebar-open');
-    }
 </script>
 
 <style>
 body {
-    background-color: #000; /* Black background */
-    color: #fff; /* White text */
+    background-color: #90EE90; /* Light green background */
+    color: #000; /* Black text */
     overflow-x: hidden; /* Prevent horizontal scroll */
     font-family: 'Roboto', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #d4a017; /* Dark yellow */
+    color: #90EE90; /* Light green */
     font-family: 'Quicksand', sans-serif;
 }
 
 #navbar {
-    background-color: #000; /* Black background */
-    color: #d4a017; /* Dark yellow text */
+    background-color: #90EE90; /* Light green background */
+    color: #000; /* Black text */
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -80,7 +74,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #navbar a {
-    color: #d4a017; /* Dark yellow text */
+    color: #000; /* Black text */
     text-decoration: none;
     margin: 0 15px;
     font-size: 16px;
@@ -112,7 +106,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #sidebar {
     display: block;
-    background-color: #000; /* Black background */
+    background-color: #90EE90; /* Light green background */
     position: fixed;
     top: 0;
     left: -250px;
@@ -130,7 +124,7 @@ h1, h2, h3, h4, h5, h6 {
 #sidebar a {
     padding: 15px;
     text-decoration: none;
-    color: #d4a017; /* Dark yellow text */
+    color: #000; /* Black text */
     display: block;
     transition: 0.3s;
     font-family: 'Quicksand', sans-serif;
@@ -146,7 +140,7 @@ h1, h2, h3, h4, h5, h6 {
     right: 10px;
     font-size: 20px;
     cursor: pointer;
-    color: #d4a017;
+    color: #000; /* Black text */
     display: flex;
     align-items: center;
 }
@@ -211,8 +205,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .toggle input[type='checkbox']:checked ~ label {
-    background-color: #d4a017; /* Dark yellow */
-    border-color: #d4a017;
+    background-color: #90EE90; /* Light green */
+    border-color: #90EE90;
 }
 
 .toggle input[type='checkbox']:checked ~ label::after {
@@ -221,19 +215,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pattern {
-    background-color: #000; /* Black background */
-    color: #fff; /* White text */
+    background-color: #90EE90; /* Light green background */
+    color: #000; /* Black text */
 }
 
 #popup .popup-content {
-    background-color: #d4a017; /* Dark yellow */
+    background-color: #90EE90; /* Light green */
     color: #000; /* Black text */
     font-family: 'Quicksand', sans-serif;
 }
 
 .btn-primary {
-    background-color: #d4a017; /* Dark yellow */
-    border-color: #d4a017;
+    background-color: #90EE90; /* Light green */
+    border-color: #90EE90;
     color: #000; /* Black text */
     font-family: 'Quicksand', sans-serif;
 }
@@ -244,15 +238,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer {
-    background-color: #000; /* Black background */
-    color: #d4a017; /* Dark yellow text */
+    background-color: #90EE90; /* Light green background */
+    color: #000; /* Black text */
     padding: 10px 0;
     text-align: center;
     font-family: 'Quicksand', sans-serif;
 }
 
 .footer a {
-    color: #d4a017; /* Dark yellow text */
+    color: #000; /* Black text */
 }
 
 .footer a:hover {
@@ -260,7 +254,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 </style>
 </head>
-<body class="bg-black text-white overflow-x-hidden">
+<body class="bg-lightgreen text-black overflow-x-hidden">
     <!-- Popup HTML -->
 <div id="popup" class="popup-overlay">
   <div class="popup-content bg-yellow-600 text-black p-4 rounded">
@@ -271,7 +265,7 @@ h1, h2, h3, h4, h5, h6 {
   </div>
 </div>
 
-<div id="navbar" class="bg-black text-yellow-600 p-4 flex justify-between items-center">
+<div id="navbar" class="bg-lightgreen text-black p-4 flex justify-between items-center">
   <div id="menu-icon" class="text-2xl ml-2"><i class="fas fa-bars"></i></div>
   <div id="logo-container" class="flex items-center">
     <img id="logo" src="Logo.jpg" alt="Logo" class="w-10 h-10 rounded-full mr-5">
@@ -279,8 +273,8 @@ h1, h2, h3, h4, h5, h6 {
   </div>
 </div>
 
-<div id="sidebar" class="bg-black fixed top-0 left-0 h-full w-48 pt-16 transition-transform duration-500 transform -translate-x-full">
-  <div id="close-btn" class="absolute top-2 right-2 text-2xl cursor-pointer text-yellow-600">
+<div id="sidebar" class="bg-lightgreen fixed top-0 left-0 h-full w-48 pt-16 transition-transform duration-500 transform -translate-x-full">
+  <div id="close-btn" class="absolute top-2 right-2 text-2xl cursor-pointer text-black">
     <div id="tools-mall-sidebar" class="flex items-center mr-16">
       <img id="logo-sidebar" src="Logo.jpg" alt="Logo" class="max-w-8 h-auto rounded-full mr-2">
       <div id="tools-mall-sidebar-name" class="font-bold text-sm ml-1 mt-1">Teleservices</div>
@@ -288,51 +282,51 @@ h1, h2, h3, h4, h5, h6 {
     <i class="fas fa-times"></i>
   </div>
 
-  <a href="#" class="block p-4 text-yellow-600 hover:bg-gray-700"><i class="fas fa-home"></i> Home </a>
-  <a href="/Docs" class="block p-4 text-yellow-600 hover:bg-gray-700"><i class="fas fa-code"></i> Documentation</a>
-  <a href="http://teleservices.rf.gd/accesstoken.php" class="block p-4 text-yellow-600 hover:bg-gray-700"><i class="fas fa-cloud-upload-alt"></i> Access Token</a>
-  <a href="http://teleservices.rf.gd/recover.php" class="block p-4 text-yellow-600 hover:bg-gray-700"><i class="fas fa-undo"></i> Recover Token</a>
-  <a href="https://t.me/payouts33" class="block p-4 text-yellow-600 hover:bg-gray-700"><i class="fas fa-phone"></i> Contact Us</a>
+  <a href="#" class="block p-4 text-black hover:bg-gray-700"><i class="fas fa-home"></i> Home </a>
+  <a href="/Docs" class="block p-4 text-black hover:bg-gray-700"><i class="fas fa-code"></i> Documentation</a>
+  <a href="http://teleservices.rf.gd/accesstoken.php" class="block p-4 text-black hover:bg-gray-700"><i class="fas fa-cloud-upload-alt"></i> Access Token</a>
+  <a href="http://teleservices.rf.gd/recover.php" class="block p-4 text-black hover:bg-gray-700"><i class="fas fa-undo"></i> Recover Token</a>
+  <a href="https://t.me/payouts33" class="block p-4 text-black hover:bg-gray-700"><i class="fas fa-phone"></i> Contact Us</a>
 </div>
 
-<div class="pattern">
-<section id="hero" class="container mx-auto py-8">
-  <div class="text-center">
-    <h1 class="animateanimated animatebounceInDown text-yellow-600">Welcome To Broadcast Management System</h1>
-    <p class="animateanimated animatebounceInUp">Generate access tokens for your bot and manage high-speed broadcast seamlessly.</p>
-    <a href="http://teleservices.rf.gd/accesstoken.php" class="btn btn-primary inline-block mt-4">Generate Now</a>
-  </div>
-</section>
-<section id="about" class="container mx-auto py-8">
-  <h2 class="text-yellow-600">About Our Project</h2>
-  <p>Welcome to our site dedicated to revolutionizing broadcasting on Telegram! Harnessing the power of our superfast API, we strive to deliver unparalleled efficiency and reliability in reaching your audience.</p>
-  <br>
-  <br>
-  <a href="/Docs" class="btn btn-primary inline-block mt-4">Learn More</a>&nbsp;
-</section>
-<section id="features" class="container mx-auto py-8">
-  <h2 class="text-yellow-600">Features</h2>
-  <ul>
-    <li><i class="fas fa-bolt"></i> High-speed API</li>
+<div class="pattern bg-lightgreen text-black">
+  <section id="hero" class="container mx-auto py-8">
+    <div class="text-center">
+      <h1 class="animateanimated animatebounceInDown text-black">Welcome To Broadcast Management System</h1>
+      <p class="animateanimated animatebounceInUp">Generate access tokens for your bot and manage high-speed broadcast seamlessly.</p>
+      <a href="http://teleservices.rf.gd/accesstoken.php" class="btn btn-primary inline-block mt-4">Generate Now</a>
+    </div>
+  </section>
+  <section id="about" class="container mx-auto py-8">
+    <h2 class="text-black">About Our Project</h2>
+    <p>Welcome to our site dedicated to revolutionizing broadcasting on Telegram! Harnessing the power of our superfast API, we strive to deliver unparalleled efficiency and reliability in reaching your audience.</p>
     <br>
-    <li><i class="fas fa-user-shield"></i> Secure and Reliable</li>
     <br>
-    <li><i class="fas fa-cogs"></i> Easy Integration</li>
-    <br>
-    <li><i class="fas fa-chart-line"></i> Performance Tracking</li>
-  </ul>
-</section>
-<section id="contact" class="container mx-auto py-8">
-  <h2 class="text-yellow-600">Contact Us</h2>
-  <p>Have questions or need support? Reach out to us:</p>
-  <ul>
-    <li><i class="fas fa-envelope"></i> Email: support@teleservices.com</li>
-    <li><i class="fab fa-telegram"></i> Telegram: @teleservices_support</li>
-  </ul>
-</section>
+    <a href="/Docs" class="btn btn-primary inline-block mt-4">Learn More</a>&nbsp;
+  </section>
+  <section id="features" class="container mx-auto py-8">
+    <h2 class="text-black">Features</h2>
+    <ul>
+      <li><i class="fas fa-bolt"></i> High-speed API</li>
+      <br>
+      <li><i class="fas fa-user-shield"></i> Secure and Reliable</li>
+      <br>
+      <li><i class="fas fa-cogs"></i> Easy Integration</li>
+      <br>
+      <li><i class="fas fa-chart-line"></i> Performance Tracking</li>
+    </ul>
+  </section>
+  <section id="contact" class="container mx-auto py-8">
+    <h2 class="text-black">Contact Us</h2>
+    <p>Have questions or need support? Reach out to us:</p>
+    <ul>
+      <li><i class="fas fa-envelope"></i> Email: support@teleservices.com</li>
+      <li><i class="fab fa-telegram"></i> Telegram: @teleservices_support</li>
+    </ul>
+  </section>
 </div>
 
-<div class="footer bg-black text-yellow-600 py-2 text-center">
+<div class="footer bg-lightgreen text-black py-2 text-center">
   <p>&copy; 2023 Teleservices. All Rights Reserved.</p>
 </div>
 
