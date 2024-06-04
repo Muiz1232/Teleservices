@@ -7,14 +7,17 @@
 <link rel="icon" href="Logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="popup.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
+<!-- Include Prism.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+<!-- Include Prism.js CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -32,6 +35,7 @@
             }
         });
 
+        // Close sidebar when clicking a link inside it
         const sidebarLinks = document.querySelectorAll('#sidebar a');
         sidebarLinks.forEach(function (link) {
             link.addEventListener('click', function () {
@@ -48,28 +52,27 @@
         body.classList.remove('sidebar-open');
     }
 </script>
-
 <style>
 body {
-    background-color: #000; /* Black background */
-    color: #fff; /* White text */
+    background-color: #111; /* Dark black background */
+    color: #d4a017; /* Dark yellow text */
     overflow-x: hidden; /* Prevent horizontal scroll */
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Apply the new font */
 }
 
 h1, h2, h3, h4, h5, h6 {
     color: #d4a017; /* Dark yellow */
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif; /* Apply the new font */
 }
 
 #navbar {
-    background-color: #000; /* Black background */
+    background-color: #111; /* Dark black background */
     color: #d4a017; /* Dark yellow text */
     padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif; /* Apply the new font */
 }
 
 #menu-icon {
@@ -83,7 +86,7 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
     margin: 0 15px;
     font-size: 16px;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif; /* Apply the new font */
 }
 
 #navbar a:hover {
@@ -93,25 +96,25 @@ h1, h2, h3, h4, h5, h6 {
 #logo-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* Changed from flex-end to center */
     width: 100%;
 }
 
 #logo {
-    width: 40px;
-    height: 40px;
+    width: 40px; /* Increase size */
+    height: 40px; /* Increase size */
     border-radius: 20px;
-    margin-right: 20px;
+    margin-right: 20px; /* Increase margin */
 }
 
 #tools-mall {
-    font-weight: bold;
-    font-size: 20px;
+    font-weight: bold; /* Make text bold */
+    font-size: 20px; /* Increase font size */
 }
 
 #sidebar {
     display: block;
-    background-color: #000; /* Black background */
+    background-color: #111; /* Dark black background */
     position: fixed;
     top: 0;
     left: -250px;
@@ -132,7 +135,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #d4a017; /* Dark yellow text */
     display: block;
     transition: 0.3s;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif; /* Apply the new font */
 }
 
 #sidebar a:hover {
@@ -145,7 +148,7 @@ h1, h2, h3, h4, h5, h6 {
     right: 10px;
     font-size: 20px;
     cursor: pointer;
-    color: #d4a017;
+    color: #d4a017; /* Dark yellow */
     display: flex;
     align-items: center;
 }
@@ -168,7 +171,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 13px;
     margin-left: 2px;
     margin-top: 2px;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif; /* Apply the new font */
 }
 
 .main {
@@ -211,43 +214,43 @@ h1, h2, h3, h4, h5, h6 {
 
 .toggle input[type='checkbox']:checked ~ label {
     background-color: #d4a017; /* Dark yellow */
-    border-color: #d4a017;
+    border-color: #d4a017; /* Dark yellow */
 }
 
 .toggle input[type='checkbox']:checked ~ label::after {
-    background-color: #e67e22;
+    background-color: #e67e22; /* Slightly different shade for toggle */
     transform: translateX(25px);
 }
 
 .pattern {
-    background-color: #000; /* Black background */
-    color: #fff; /* White text */
+    background-color: #111; /* Dark black background */
+    color: #d4a017; /* Dark yellow text */
 }
 
 #popup .popup-content {
     background-color: #d4a017; /* Dark yellow */
-    color: #000; /* Black text */
-    font-family: 'Quicksand', sans-serif;
+    color: #111; /* Dark black text */
+    font-family: 'Quicksand', sans-serif; /* Apply the new font */
 }
 
 .btn-primary {
     background-color: #d4a017; /* Dark yellow */
-    border-color: #d4a017;
-    color: #000; /* Black text */
-    font-family: 'Quicksand', sans-serif;
+    border-color: #d4a017; /* Dark yellow */
+    color: #111; /* Dark black text */
+    font-family: 'Quicksand', sans-serif; /* Apply the new font */
 }
 
 .btn-primary:hover {
-    background-color: #e67e22;
-    border-color: #e67e22;
+    background-color: #e67e22; /* Slightly different shade for hover */
+    border-color: #e67e22; /* Slightly different shade for hover */
 }
 
 .footer {
-    background-color: #000; /* Black background */
+    background-color: #111; /* Dark black background */
     color: #d4a017; /* Dark yellow text */
     padding: 10px 0;
     text-align: center;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif; /* Apply the new font */
 }
 
 .footer a {
@@ -255,7 +258,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer a:hover {
-    color: #e67e22;
+    color: #e67e22; /* Slightly different shade for hover */
+}
+
+.container {
+    background-color: #111; /* Dark black background for sections */
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
 </style>
 </head>
@@ -271,76 +281,71 @@ h1, h2, h3, h4, h5, h6 {
 </div>
 
 <div id="navbar">
-  <div id="menu-icon" class="tap-shadow"><i class="fas fa-bars"></i></div>
-  <div id="logo-container">
-    <img id="logo" src="Logo.jpg" alt="Logo">
-    <div id="tools-mall">Teleservices</div>
-  </div>
+    <div id="logo-container">
+        <img id="logo" src="Logo.svg" alt="Logo">
+        <span id="tools-mall">Tele Services</span>
+    </div>
+    <div>
+        <i id="menu-icon" class="fas fa-bars"></i>
+    </div>
 </div>
 
 <div id="sidebar">
-  <div id="close-btn" class="tap-shadow" onclick="closeSidebar()">
     <div id="tools-mall-sidebar">
-      <img id="logo-sidebar" src="Logo.jpg" alt="Logo">
-      <div id="tools-mall-sidebar-name">Teleservices</div>
+        <img id="logo-sidebar" src="Logo.svg" alt="Logo">
+        <span id="tools-mall-sidebar-name">Tele Services</span>
+        <i id="close-btn" class="fas fa-times" onclick="closeSidebar()"></i>
     </div>
-    <i class="fas fa-times"></i>
-  </div>
-
-  <a href="#"><i class="fas fa-home"></i> Home </a>
-  <a href="/Docs"><i class="fas fa-code"></i> Documentation</a>
-  <a href="http://teleservices.rf.gd/accesstoken.php"><i class="fas fa-cloud-upload-alt"></i> Access Token</a>
-  <a href="http://teleservices.rf.gd/recover.php"><i class="fas fa-undo"></i> Recover Token</a>
-  <a href="https://t.me/payouts33"><i class="fas fa-phone"></i> Contact Us</a>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
 </div>
 
-<div class="pattern">
-<section id="hero">
-  <div class="container">
-    <h1 class="animate__animated animate__bounceInDown">Welcome To Broadcast Management System</h1>
-    <p class="animate__animated animate__bounceInUp">Generate access tokens for your bot and manage high-speed broadcast seamlessly.</p>
-    <a href="http://teleservices.rf.gd/accesstoken.php" class="btn btn-primary">Generate Now</a>
-  </div>
-</section>
-<section id="about">
-  <div class="container">
-    <h2 style="color: #d4a017;">About Our Project</h2>
-    <p>Welcome to our site dedicated to revolutionizing broadcasting on Telegram! Harnessing the power of our superfast API, we strive to deliver unparalleled efficiency and reliability in reaching your audience.</p>
-    <br> 
-    <br> 
-    <a href="/Docs" class="btn btn-primary">Learn More</a>&nbsp;
-  </div>
-</section>
-<section id="features">
-  <div class="container">
-    <h2 style="color: #d4a017;">Features</h2>
-    <ul>
-      <li><i class="fas fa-bolt"></i> High-speed API</li>
-      <br>
-      <li><i class="fas fa-user-shield"></i> Secure and Reliable</li>
-      <br>
-      <li><i class="fas fa-cogs"></i> Easy Integration</li>
-      <br>
-      <li><i class="fas fa-chart-line"></i> Performance Tracking</li>
-    </ul>
-  </div>
-</section>
-<section id="contact">
-  <div class="container">
-    <h2 style="color: #d4a017;">Contact Us</h2>
-    <p>Have questions or need support? Reach out to us:</p>
-    <ul>
-      <li><i class="fas fa-envelope"></i> Email: support@teleservices.com</li>
-      <li><i class="fab fa-telegram"></i> Telegram: @teleservices_support</li>
-    </ul>
-  </div>
-</section>
+<div class="main">
+    <div class="container">
+        <h1>About Our Project</h1>
+        <p>Welcome to Tele Services. We offer top-notch services to cater to your needs. Our platform ensures the highest level of security and reliability.</p>
+    </div>
+
+    <div class="container">
+        <h2>Features</h2>
+        <ul>
+            <li>⚡ High-speed API</li>
+            <li>🔒 Secure and Reliable</li>
+            <li>🔧 Easy Integration</li>
+            <li>📈 Performance Tracking</li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>Have questions or need support? Reach out to us:</p>
+        <ul>
+            <li>📧 Email: support@teleservices.com</li>
+            <li>📱 Telegram: @teleservices_support</li>
+        </ul>
+    </div>
 </div>
 
 <div class="footer">
-  <p>&copy; 2023 Teleservices. All Rights Reserved.</p>
+    <p>© 2023 Teleservices. All Rights Reserved.</p>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('menu-icon').addEventListener('click', function () {
+            document.getElementById('sidebar').classList.toggle('open');
+        });
+
+        document.querySelector('.close-btn').addEventListener('click', function () {
+            document.getElementById('popup').style.display = 'none';
+        });
+
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+    });
+</script>
 </body>
 </html>
